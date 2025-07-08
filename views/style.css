@@ -1,0 +1,75 @@
+form {
+  background-color: #8DBCC7;
+  padding: 20px;
+  border-radius: 20px;
+  margin-top: 10px;
+  box-shadow: 0px 2px 8px 8px #C4E1E6;
+}
+input[type="text"],
+input[type="id"] {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 15px;
+}
+input[type="submit"] {
+  border-radius: 12px;
+}
+input:hover[type="submit"] {
+  border-radius: 12px;
+  background-color: #257988;
+}
+
+select {
+  display: block;
+  margin-bottom: 10px;
+  padding: 8px;
+  border-radius: 15px;
+}
+body {
+  background-color: #EBFFD8;
+}
+
+a {
+    display: grid;
+  background-color: #C4E1E6;
+  margin-bottom: 10px;
+  padding: 8px;
+  width: 100%;
+  border-radius: 15px;
+  list-style-type: none;
+  text-decoration: none;
+  font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
+  font-size: 20px;
+  color: black;
+  }
+
+  a:hover {
+    text-decoration: underline;
+    
+  }
+
+  .gradient-custom-2 {
+/* fallback for old browsers */
+background: #fccb90;
+
+/* Chrome 10-25, Safari 5.1-6 */
+background: -webkit-linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+
+/* W3C, IE 10+/ Edge, Firefox 16+, Chrome 26+, Opera 12+, Safari 7+ */
+background: linear-gradient(to right, #ee7724, #d8363a, #dd3675, #b44593);
+}
+
+@media (min-width: 768px) {
+.gradient-form {
+height: 100vh !important;
+}
+}
+@media (min-width: 769px) {
+.gradient-custom-2 {
+border-top-right-radius: .3rem;
+border-bottom-right-radius: .3rem;
+}
+}
+

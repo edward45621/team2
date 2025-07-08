@@ -1,0 +1,43 @@
+<% if (session && session.isLoggedIn) { %>
+<link rel="stylesheet" href="style.css">
+<header>
+  <style>
+    nav {
+      background-color: #1B3C53;
+      list-style-type: none;
+    }
+    .nav-link:hover {
+      transition: ease-in-out 0.5s;
+      box-shadow: 0px 2px 4px 8px aqua;
+      border-radius: 22px;
+      background-color: white;
+    }
+    .nav-item {
+      margin: 15px;
+      color: white;
+    }
+    .nav-item :hover {
+      color: black;
+      text-decoration: none;
+    }
+  </style>
+  <div>
+    <nav class="navbar navbar-expand-md navbar-dark fixed-top">
+      <ul class="navbar-nav mr-auto">
+        <li class="nav-item">
+          <a class="nav-link" href="/index">Data Karyawan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/Karyawan">Karyawan</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="/GajiKaryawan">Gaji Karyawan</a>
+        </li>
+      </ul>
+      <p style="color: white; padding-left: 50%; font-family:Arial, Helvetica, sans-serif;font-size: 30px;">
+        Staff <span style="color: Red; font-style: italic;">App</span>
+      </p>
+    </nav>
+  </div>
+</header>
+<% } %>

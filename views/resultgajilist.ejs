@@ -1,0 +1,24 @@
+<h2 class="mt-4" style="padding-top:100px;">Hasil Pencarian:</h2>
+
+<table class="table table-bordered table-striped mt-3">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID Karyawan</th>
+      <th>ID Karyawan</th>
+      <th>Tunjangan</th>
+      <th>Gaji Pokok</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% gajikaryawans.forEach(gajikaryawan => { %>
+      <tr>
+        <td><%= gajikaryawan.idGaji %></td>
+        <td><%= gajikaryawan.idKaryawan %></td>
+        <td><%= gajikaryawan.tunjangan %></td>
+        <td><%= gajikaryawan.gajiPokok %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="/GajiKaryawan" class="btn btn-secondary mt-3">Kembali</a>

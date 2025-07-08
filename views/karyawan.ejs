@@ -1,0 +1,176 @@
+<link rel="stylesheet" href="style.css">
+<main role="main" class="container">
+  <h1 class="mt-5" style="padding-top: 100px;" >Karyawan</h1>
+
+  <!-- Tombol Tampilkan Form Tambah =============================================================================================================================================================== -->
+  <div>
+    <a href="#" onclick="toggleFormTambah()">Tambahkan Data Karyawan</a>
+  </div>
+
+  <!-- Form Tambah (POST) yang disembunyikan -->
+  <div id="formTambahContainer" style="display: none;">
+    <form action="/Karyawan" method="post" class="form">
+      <input type="id" name="id" placeholder="Id" required>
+      <input type="text" name="nama" placeholder="Nama" required>
+      <input type="text" name="divisi" placeholder="Divisi" required>
+      <input type="text" name="jabatan" placeholder="Jabatan" required>
+      <select name="status" aria-placeholder="Pilih status" required>
+          <option value="Aktif">Aktif</option>
+          <option value="Tidak Aktif">Non Aktif</option>
+      </select>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+<!-- Post end =============================================================================================================================================================== -->
+
+  <!-- Tombol Tampilkan Form Cari NAMA=============================================================================================================================================================== -->
+  <div style="margin-top: 20px;">
+    <a href="#" onclick="toggleFormCariNama()">Cari Karyawan Berdasarkan Nama</a>
+  </div>
+
+  <!-- Form Cari Nama (GET) yang disembunyikan -->
+  <div id="formCariNamaContainer" style="display: none;">
+    <form action="/Karyawan/nama" method="get" class="form">
+      <input type="text" name="name" placeholder="Masukkan Nama" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+  <!-- Cari Nama End=============================================================================================================================================================== -->
+
+
+  <!-- Tombol Form Cari ID ===============================================================================================================================================================-->
+  <div style="margin-top: 20px;">
+    <a href="#" onclick="toggleFormCariId()">Cari Karyawan Berdasarkan Id</a>
+  </div>
+
+  <!-- Form Cari (GET) yang disembunyikan -->
+  <div id="formCariIdContainer" style="display: none;">
+    <form action="/Karyawan/id" method="get" class="form">
+      <input type="text" name="name" placeholder="Masukkan Id" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+  <!-- ID end =============================================================================================================================================================== -->
+
+
+<!-- Tombol Form Cari Jabatan =============================================================================================================================================================== -->
+ <div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormCariJabatan()">Cari Karyawan Berdasarkan Jabatan</a>
+</div>
+
+<!-- Form Cari Berdasarkan Jabatan -->
+  <div id="formCariJabatanContainer" style="display: none;">
+    <form action="/Karyawan/Jabatan" method="get" class="form">
+      <input type="text" name="name" placeholder="Masukkan Jabatan" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+<!-- Jabatan end =============================================================================================================================================================== -->
+
+<!-- Tombol Form Cari Divisi =============================================================================================================================================================== -->
+ <div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormCariDivisi()">Cari Karyawan Berdasarkan Divisi</a>
+</div>
+
+<!-- Form Cari Berdasarkan Divisi -->
+  <div id="formCariDivisiContainer" style="display: none;">
+    <form action="/Karyawan/Divisi" method="get" class="form">
+      <input type="text" name="name" placeholder="Masukkan Divisi" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+<!-- Divisi end =============================================================================================================================================================== -->
+
+<!-- Tombol Form Cari Status =============================================================================================================================================================== -->
+ <div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormCariStatus()">Cari Karyawan Berdasarkan Status</a>
+</div>
+
+<!-- Form Cari Berdasarkan Status -->
+  <div id="formCariStatusContainer" style="display: none;">
+    <form action="/Karyawan/Status" method="get" class="form">
+       <select name="status" required>
+          <option value="Aktif">Aktif</option>
+          <option value="Tidak Aktif">Non Aktif</option>
+      </select>
+      <input type="submit" name="submit" value="Cari">
+    </form>
+  </div>
+<!-- Status end ==== -->
+
+  <!-- Tombol Tampilkan Form Update===================================================================================== -->
+<div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormUpdate()">Update Data Karyawan</a>
+</div>
+
+<!-- Form Update -->
+<div id="formUpdateContainer" style="display: none;">
+  <form action="/Karyawan/update" method="post" class="form">
+    <input type="text" name="id" placeholder="ID yang mau diupdate" required>
+    <input type="text" name="nama" placeholder="Nama baru" required>
+    <input type="text" name="divisi" placeholder="Divisi baru" required>
+    <input type="text" name="jabatan" placeholder="Jabatan baru" required>
+    <select name="status" required>
+          <option value="Aktif">Aktif</option>
+          <option value="Tidak Aktif">Non Aktif</option>
+      </select>
+    <input type="submit" value="Update">
+  </form>
+</div>
+<!-- Update end=======================-->
+
+<!-- Tombol Tampilkan Form Delete =============================================================================================================================================================== -->
+<div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormDelete()">Hapus Data Karyawan</a>
+</div>
+
+<!-- Form Delete -->
+<div id="formDeleteContainer" style="display: none;">
+  <form action="/Karyawan/delete" method="post" class="form">
+    <input type="text" name="id" placeholder="ID yang akan dihapus" required>
+    <input type="submit" value="Hapus">
+  </form>
+</div>
+<!-- Delete End =============================================================================================================================================================== -->
+
+
+<!-- Script untuk toggle tampilan form -->
+<script>
+  function toggleFormTambah() {
+    const form = document.getElementById('formTambahContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+
+  function toggleFormCariNama() {
+    const form = document.getElementById('formCariNamaContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+   function toggleFormCariId() {
+    const form = document.getElementById('formCariIdContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormUpdate() {
+    const form = document.getElementById('formUpdateContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormDelete() {
+    const form = document.getElementById('formDeleteContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+     function toggleFormCariJabatan() {
+    const form = document.getElementById('formCariJabatanContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormCariDivisi() {
+    const form = document.getElementById('formCariDivisiContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormCariStatus() {
+    const form = document.getElementById('formCariStatusContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+
+</script>
+</main>
+
+

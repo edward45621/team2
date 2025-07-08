@@ -1,0 +1,140 @@
+<link rel="stylesheet" href="style.css">
+<main role="main" class="container">
+<h1 class="mt-5" style="padding-top: 100px;">Gaji karyawan</h1>
+  <!-- Tombol Tampilkan Form Tambah =============================================================================================================================================================== -->
+  <div>
+    <a href="#" onclick="toggleFormTambahGaji()">Tambahkan Data Gaji Karyawan</a>
+  </div>
+
+  <!-- Form Tambah (POST) yang disembunyikan -->
+  <div id="formTambahGajiContainer" style="display: none;">
+    <form action="/GajiKaryawan" method="post" class="form">
+      <input type="id" name="idGaji" placeholder="Id Gaji" required>
+      <input type="text" name="idKaryawan" placeholder="Id Karyawan" required>
+      <input type="text" name="tunjangan" placeholder="Tunjangan" required>
+      <input type="text" name="gajiPokok" placeholder="Gaji Pokok" required>
+      <input type="submit" value="Submit">
+    </form>
+  </div>
+<!-- Post end ===================================================================================================================================================================================================-->
+
+ <!-- Tombol Tampilkan Form Cari Id Gaji=============================================================================================================================================================== -->
+  <div style="margin-top: 20px;">
+    <a href="#" onclick="toggleFormCariIdGaji()">Cari Gaji Karyawan Berdasarkan ID Gaji</a>
+  </div>
+
+  <!-- Form Cari Id gaji (GET) yang disembunyikan -->
+  <div id="formCariIdGajiContainer" style="display: none;">
+    <form action="/GajiKaryawan/idGaji" method="get" class="form">
+      <input type="text" name="idGaji" placeholder="Masukkan Id Gaji" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+  <!-- Cari ID Gaji End=============================================================================================================================================================== -->
+
+   <!-- Tombol Tampilkan Form Cari Id Karyawan=============================================================================================================================================================== -->
+  <div style="margin-top: 20px;">
+    <a href="#" onclick="toggleFormCariIdKaryawan()">Cari Gaji Karyawan Berdasarkan ID Karyawan</a>
+  </div>
+
+  <!-- Form Cari Id Karyawan (GET) yang disembunyikan -->
+  <div id="formCariIdKaryawanContainer" style="display: none;">
+    <form action="/GajiKaryawan/idKaryawan" method="get" class="form">
+      <input type="text" name="idKaryawan" placeholder="Masukkan Id Karyawan" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+  <!-- Cari ID Karyawan End=============================================================================================================================================================== -->
+
+     <!-- Tombol Tampilkan Form Cari Tunjangan Karyawan=============================================================================================================================================================== -->
+  <div style="margin-top: 20px;">
+    <a href="#" onclick="toggleFormCariTunjanganKaryawan()">Cari Gaji Karyawan Berdasarkan Tunjangan</a>
+  </div>
+
+  <!-- Form Cari Tunjangan Karyawan (GET) yang disembunyikan -->
+  <div id="formCariTunjanganKaryawanContainer" style="display: none;">
+    <form action="/GajiKaryawan/tunjangan" method="get" class="form">
+      <input type="text" name="tunjangan" placeholder="Masukkan Tunjangan Karyawan" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+  <!-- Cari Tunjangan Karyawan End=============================================================================================================================================================== -->
+
+  
+     <!-- Tombol Tampilkan Form Cari Gaji Pokok Karyawan=============================================================================================================================================================== -->
+  <div style="margin-top: 20px;">
+    <a href="#" onclick="toggleFormCariGajiPokokKaryawan()">Cari Gaji Karyawan Berdasarkan Pokok</a>
+  </div>
+
+  <!-- Form Cari Gaji Pokok Karyawan (GET) yang disembunyikan -->
+  <div id="formCariGajipokokKaryawanContainer" style="display: none;">
+    <form action="/GajiKaryawan/gajiPokok" method="get" class="form">
+      <input type="text" name="gajiPokok" placeholder="Masukkan Gaji Pokok Karyawan" required>
+      <input type="submit" value="Cari">
+    </form>
+  </div>
+  <!-- Cari Gaji Pokok Karyawan End==================================================================================-->
+
+    <!-- Tombol Tampilkan Form Update===================================================================================== -->
+<div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormUpdateGaji()">Update Data Karyawan</a>
+</div>
+
+<!-- Form Update -->
+<div id="formUpdateGajiContainer" style="display: none;">
+  <form action="/GajiKaryawan/update" method="post" class="form">
+    <input type="text" name="idGaji" placeholder="ID Gaji yang mau di update" required>
+    <input type="text" name="tunjangan" placeholder="Masukan Tunjangan Baru" required>
+    <input type="text" name="gajiPokok" placeholder="Masukan Gaji Pokok baru" required>
+    <input type="submit" value="Update">
+  </form>
+</div>
+<!-- Update end=====================================================================================================================================-->
+
+<!-- Tombol Tampilkan Form Delete Gaji =============================================================================================================================================================== -->
+<div style="margin-top: 20px;">
+  <a href="#" onclick="toggleFormDeleteGaji()">Hapus Data Gaji Karyawan</a>
+</div>
+
+<!-- Form Delete -->
+<div id="formDeleteGajiContainer" style="display: none;">
+  <form action="/GajiKaryawan/delete" method="post" class="form">
+    <input type="text" name="idGaji" placeholder="ID Gaji yang akan dihapus" required>
+    <input type="submit" value="Hapus">
+  </form>
+</div>
+<!-- Delete Gaji End =============================================================================================================================================================== -->
+
+
+<script>
+    function toggleFormTambahGaji() {
+    const form = document.getElementById('formTambahGajiContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormCariIdGaji() {
+    const form = document.getElementById('formCariIdGajiContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormCariIdKaryawan() {
+    const form = document.getElementById('formCariIdKaryawanContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormCariTunjanganKaryawan() {
+    const form = document.getElementById('formCariTunjanganKaryawanContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormCariGajiPokokKaryawan() {
+    const form = document.getElementById('formCariGajipokokKaryawanContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+    function toggleFormUpdateGaji() {
+    const form = document.getElementById('formUpdateGajiContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+
+    function toggleFormDeleteGaji() {
+    const form = document.getElementById('formDeleteGajiContainer');
+    form.style.display = form.style.display === 'none' ? 'block' : 'none';
+  }
+</script>
+</main>

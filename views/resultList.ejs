@@ -1,0 +1,26 @@
+<h2 class="mt-4" style="padding-top:100px;">Hasil Pencarian:</h2>
+
+<table class="table table-bordered table-striped mt-3">
+  <thead class="thead-dark">
+    <tr>
+      <th>ID</th>
+      <th>Nama</th>
+      <th>Divisi</th>
+      <th>Jabatan</th>
+      <th>Status</th>
+    </tr>
+  </thead>
+  <tbody>
+    <% karyawans.forEach(karyawan => { %>
+      <tr>
+        <td><%= karyawan.id %></td>
+        <td><%= karyawan.nama %></td>
+        <td><%= karyawan.divisi %></td>
+        <td><%= karyawan.jabatan %></td>
+        <td><%= karyawan.status %></td>
+      </tr>
+    <% }) %>
+  </tbody>
+</table>
+
+<a href="/Karyawan" class="btn btn-secondary mt-3">Kembali</a>

@@ -1,0 +1,67 @@
+<main role="main" class="container">
+    <h1 class="mt-5" style="padding-top: 50px;" >Data</h1>
+    <h2>List Data Karyawan</h2>
+    <table class="table">
+        <thead>
+            <tr>
+                <th scope="col">Id</th>
+                <th scope="col">Nama</th>
+                <th scope="col">Divisi</th>
+                <th scope="col">Jabatan</th>
+                <th scope="col">Status</th>
+            </tr>
+        </thead>
+        <tbody>
+            <% myKaryawans.forEach(k => { %>
+            <tr>
+                <td>
+                    <%=k.id %>
+                </td>
+                <td>
+                    <%=k.nama %>
+                </td>
+                <td>
+                    <%=k.divisi %>
+                </td>
+                <td>
+                    <%=k.jabatan %>
+                </td>
+                <td>
+                    <%=k.status %>
+                </td>
+             <% }); %>
+            </tr>
+        </tbody>
+    </table>
+
+    <h2 style="margin-top: 50px;">List Gaji Karyawan</h2>
+<table class="table">
+    <thead>
+        <tr>
+            <th>Id Gaji</th>
+            <th>Id Karyawan</th>
+            <th>Tunjangan</th>
+            <th>Gaji Pokok</th>
+        </tr>
+    </thead>
+    <tbody>
+        <% myGajis.forEach(g => { %>
+        <tr>
+            <td><%= g.idGaji %></td>
+            <td><%= g.idKaryawan %></td>
+            <td><%= g.tunjangan %></td>
+            <td><%= g.gajiPokok %></td>
+        </tr>
+        <% }) %>
+    </tbody>
+</table>
+
+</main>
+
+
+
+
+
+
+
+
